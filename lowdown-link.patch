@@ -1,0 +1,11 @@
+--- lowdown-1.0.0/Makefile.orig	2022-05-28 19:48:08.000000000 +0200
++++ lowdown-1.0.0/Makefile	2022-07-04 20:16:37.742257784 +0200
+@@ -183,7 +183,7 @@ liblowdown.a: $(OBJS) $(COMPAT_OBJS)
+ 	$(AR) rs $@ $(OBJS) $(COMPAT_OBJS)
+ 
+ liblowdown.so: $(OBJS) $(COMPAT_OBJS)
+-	$(CC) -shared -o $@.$(LIBVER) $(OBJS) $(COMPAT_OBJS) $(LDFLAGS) $(LDADD_MD5) -Wl,-soname,$@.$(LIBVER)
++	$(CC) -shared -o $@.$(LIBVER) $(OBJS) $(COMPAT_OBJS) $(LDFLAGS) $(LDADD_MD5) -lm -Wl,-soname,$@.$(LIBVER)
+ 	ln -sf $@.$(LIBVER) $@
+ 
+ install: bins
