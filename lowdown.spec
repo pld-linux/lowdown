@@ -1,13 +1,12 @@
 Summary:	Simple markdown translator library and tools
 Summary(pl.UTF-8):	Prosta biblioteka i narzędzia do tłumaczenia formatu markdown
 Name:		lowdown
-Version:	1.0.0
+Version:	1.1.0
 Release:	1
 License:	ISC
 Group:		Applications/Text
 Source0:	https://kristaps.bsd.lv/lowdown/snapshots/%{name}-%{version}.tar.gz
-# Source0-md5:	383323ac828001ad601737bbf5b7a95f
-Patch0:		%{name}-link.patch
+# Source0-md5:	b4246cabfc55fab7fa4f948202f3807f
 URL:		https://kristaps.bsd.lv/lowdown/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +45,6 @@ Statyczna biblioteka lowdown.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 # not autoconf configure
